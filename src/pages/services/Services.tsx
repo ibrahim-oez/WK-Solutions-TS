@@ -5,6 +5,7 @@ import geminiApps from "../../global_assets/img/gemini-apps.webp";
 import WebsitePic5 from "../../global_assets/img/website-pic-5.jpg";
 import WebsitePic6 from "../../global_assets/img/website-pic-6.jpg";
 import { Accordion } from "../../global_components/Accordion";
+import { Button, Card, SectionHeading, GradientIcon } from "../../global_components/ui";
 import type { ReactNode } from "react";
 
 interface AccordionItem {
@@ -42,26 +43,32 @@ const faqItems: AccordionItem[] = [
 
 export const Services: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16 space-y-12">
-      {/* Headings und Einleitungstext */}
-      <h1
-        className="text-3xl font-bold text-black mb-4 text-center"
-        data-aos="fade-down" // Von oben herab gleiten
-        data-aos-duration="1000"
-      >
-        Ihre Herausforderungen. Unsere Lösungen.
-      </h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Hero Header */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h1
+            className="text-4xl md:text-5xl font-bold mb-6"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+          >
+            Ihre Herausforderungen. Unsere Lösungen.
+          </h1>
+          <p
+            className="text-xl md:text-2xl opacity-95 max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+          >
+            Für Unternehmen, Startups und Selbstständige biete ich umfassende IT- &
+            Designlösungen. Privatpersonen unterstütze ich gezielt mit
+            professioneller IT-Hilfe.
+          </p>
+          <div className="w-24 h-1 bg-white mx-auto mt-8 rounded-full" data-aos="zoom-in" data-aos-delay="400" />
+        </div>
+      </div>
 
-      <p
-        className="text-gray-700 text-center max-w-2xl mx-auto"
-        data-aos="fade-up" // Von unten hoch gleiten
-        data-aos-delay="200"
-        data-aos-duration="1000"
-      >
-        Für Unternehmen, Startups und Selbstständige biete ich umfassende IT- &
-        Designlösungen. Privatpersonen unterstütze ich gezielt mit
-        professioneller IT-Hilfe. Verständlich, verlässlich und auf Augenhöhe.
-      </p>
+      <div className="max-w-4xl mx-auto px-4 py-16 space-y-12">
 
       {/* --- */}
 
@@ -203,102 +210,106 @@ export const Services: React.FC = () => {
         </section>
       </div>
 
-      <hr className="my-16" />
+      <hr className="my-16 border-blue-200" />
 
       {/* --- */}
 
-      {/* Aktualisierte Boxen für eine kompakte Übersicht */}
-      <div className="grid md:grid-cols-2 gap-10">
+      {/* Leistungs-Cards */}
+      <div className="grid md:grid-cols-2 gap-8">
         {/* Box 1: Strategische IT-Beratung */}
-        <div
-          className="p-6 bg-white border rounded-lg shadow hover:shadow-lg transition"
-          data-aos="zoom-in"
-          data-aos-delay="100"
-        >
-          <h2 className="text-xl font-semibold text-black mb-2">
+        <Card variant="hover" aosAnimation="zoom-in" aosDelay="100">
+          <GradientIcon>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </GradientIcon>
+          <h2 className="text-xl font-bold text-gray-900 mb-3 mt-4">
             Strategische IT-Beratung
           </h2>
-          <p className="text-gray-700">
+          <p className="text-gray-600 leading-relaxed">
             Individuelle Analyse und Beratung zu Ihrer IT-Infrastruktur,
             Optimierung von Prozessen und smarten Investitionen.
           </p>
-        </div>
+        </Card>
 
         {/* Box 2: Professionelle Webpräsenz */}
-        <div
-          className="p-6 bg-white border rounded-lg shadow hover:shadow-lg transition"
-          data-aos="zoom-in"
-          data-aos-delay="200"
-        >
-          <h2 className="text-xl font-semibold text-black mb-2">
+        <Card variant="hover" aosAnimation="zoom-in" aosDelay="200">
+          <GradientIcon>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+          </GradientIcon>
+          <h2 className="text-xl font-bold text-gray-900 mb-3 mt-4">
             Professionelle Webpräsenz
           </h2>
-          <p className="text-gray-700">
+          <p className="text-gray-600 leading-relaxed">
             Von der Konzeption bis zum Go-Live: Responsive Webseiten und
             zuverlässiges Hosting für Ihren starken Online-Auftritt.
           </p>
-        </div>
+        </Card>
 
         {/* Box 3: Effiziente Software & Geräte */}
-        <div
-          className="p-6 bg-white border rounded-lg shadow hover:shadow-lg transition"
-          data-aos="zoom-in"
-          data-aos-delay="300"
-        >
-          <h2 className="text-xl font-semibold text-black mb-2">
+        <Card variant="hover" aosAnimation="zoom-in" aosDelay="300">
+          <GradientIcon>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </GradientIcon>
+          <h2 className="text-xl font-bold text-gray-900 mb-3 mt-4">
             Effiziente Software & Geräte
           </h2>
-          <p className="text-gray-700">
+          <p className="text-gray-600 leading-relaxed">
             Wählen und richten Sie die perfekte Software und Hardware ein, die
             Ihren Arbeitsalltag digital vereinfacht.
           </p>
-        </div>
+        </Card>
 
         {/* Box 4: Design & Printprodukte */}
-        <div
-          className="p-6 bg-white border rounded-lg shadow hover:shadow-lg transition"
-          data-aos="zoom-in"
-          data-aos-delay="400"
-        >
-          <h2 className="text-xl font-semibold text-black mb-2">
+        <Card variant="hover" aosAnimation="zoom-in" aosDelay="400">
+          <GradientIcon>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          </GradientIcon>
+          <h2 className="text-xl font-bold text-gray-900 mb-3 mt-4">
             Design & Printprodukte
           </h2>
-          <p className="text-gray-700">
+          <p className="text-gray-600 leading-relaxed">
             Gestaltung von Visitenkarten, Flyern und mehr, inklusive
             Materialberatung und optionaler Druckabwicklung.
           </p>
-        </div>
+        </Card>
       </div>
 
-      {/* --- */}
-
-      <div className="w-full flex justify-center mt-8">
-        <a
-          href="/kontakt"
-          className="bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition w-fit"
-          data-aos="zoom-in" // Button animieren
-          data-aos-delay="500"
+      {/* CTA Section */}
+      <Card variant="gradient" className="text-center mt-16" aosAnimation="fade-up">
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          Bereit für Ihre digitale Transformation?
+        </h3>
+        <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          Vereinbaren Sie ein unverbindliches Beratungsgespräch und lassen Sie uns gemeinsam Ihre IT-Herausforderungen lösen.
+        </p>
+        <Button
+          to="/kontakt"
+          variant="primary"
+          size="lg"
+          aosAnimation="zoom-in"
+          aosDelay="200"
         >
           Jetzt Termin vereinbaren
-        </a>
-      </div>
-      <hr />
-      <section>
-        <h2
-          className="text-3xl font-bold text-center mb-8 text-gray-600"
-          data-aos="fade-up" // FAQ-Überschrift animieren
-        >
-          Ihre Fragen
-        </h2>
-        {/*
-          Anmerkung: Die einzelnen Akkordion-Elemente sollten ihre Animationen
-          innerhalb der Accordion-Komponente selbst erhalten, wenn gewünscht.
-          Hier animieren wir nur den übergeordneten Container.
-        */}
+        </Button>
+      </Card>
+
+      {/* FAQ Section */}
+      <section className="mt-20">
+        <SectionHeading 
+          title="Häufig gestellte Fragen"
+        />
         <div data-aos="fade-up" data-aos-delay="200">
-            <Accordion items={faqItems} />
+          <Accordion items={faqItems} />
         </div>
       </section>
+    </div>
     </div>
   );
 };

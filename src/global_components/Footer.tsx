@@ -3,7 +3,7 @@ import Logo from "../global_assets/img/wk-solutions-logo-svg/wk-logo-black.svg";
 // components/Footer.jsx
 export function Footer() {
   return (
-    <footer className="bg-white text-sm text-gray-600 border-t mt-12">
+    <footer className="bg-white text-sm text-gray-600 border-t border-gray-400 mt-12">
       <div className="max-w-4xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <div className="flex items-center space-x-3 ">
           <img src={Logo} alt="WK Solutions Logo" className="h-10 " />

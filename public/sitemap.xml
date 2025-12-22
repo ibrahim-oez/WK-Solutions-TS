@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Startseite -->
+  <url>
+    <loc>https://wk-solutions.de/</loc>
+    <lastmod>2025-06-10T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Leistungen Seite -->
+  <url>
+    <loc>https://wk-solutions.de/leistungen</loc>
+    <lastmod>2025-06-10T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Über Mich Seite -->
+  <url>
+    <loc>https://wk-solutions.de/ueber-mich</loc>
+    <lastmod>2025-06-10T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Kontakt Seite -->
+  <url>
+    <loc>https://wk-solutions.de/kontakt</loc>
+    <lastmod>2025-06-10T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Datenschutz Seite -->
+  <url>
+    <loc>https://wk-solutions.de/datenschutz</loc>
+    <lastmod>2025-06-10T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Impressum Seite -->
+  <url>
+    <loc>https://wk-solutions.de/impressum</loc>
+    <lastmod>2025-06-10T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- AGB Seite -->
+  <url>
+    <loc>https://wk-solutions.de/agb</loc>
+    <lastmod>2025-06-10T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
