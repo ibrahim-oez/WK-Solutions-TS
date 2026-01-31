@@ -15,7 +15,7 @@ export const Contact: React.FC = () => {
         untertitel="Lassen Sie uns gemeinsam Ihre IT-Herausforderungen lösen"
       />
       
-      <div className="max-w-3xl mx-auto px-4 py-16">
+      <div className="max-w-3xl mx-auto px-4">
       
       {/* Kontaktformular */}
       <KontaktFormular />

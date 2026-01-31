@@ -13,7 +13,7 @@ import { Services } from "./pages/services/Services.tsx";
 import { About } from "./pages/ueber-mich/About.tsx";
 import { Contact } from "./pages/contact/Contact.tsx";
 import { KontaktDaten } from "./pages/contact/components/KontaktDaten.tsx";
-import { Reviews } from "./pages/reviews/Reviews.tsx";
+//import { Reviews } from "./pages/reviews/Reviews.tsx";
 
 // Selten besuchte Seiten - lazy laden für bessere Performance
 const Datenschutz = lazy(() => import("./pages/data-privacy/Datenschutz.tsx").then(m => ({ default: m.Datenschutz })));
@@ -72,7 +72,7 @@ export default function App() {
                   <Route path="/impressum" element={<Impressum />} />
                   <Route path="/agb" element={<AGB />} />
                   <Route path="/widerrufsrecht" element={<Widerruf />} />
-                  <Route path="/bewertungen" element={<Reviews />} />
+                 {/* <Route path="/bewertungen" element={<Reviews />} />*/}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>

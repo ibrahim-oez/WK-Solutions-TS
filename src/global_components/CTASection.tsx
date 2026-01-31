@@ -6,7 +6,7 @@ interface CTASectionProps {
   description: string;
   buttonText: string;
   buttonLink: string;
-  variant?: 'gradient' | 'standard' | 'background-image';
+  variant?: 'gradient' | 'default' | 'background-image';
   backgroundImage?: string;
   className?: string;
   aosDelay?: number;
@@ -75,7 +75,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
   return (
     <Card
-      variant={variant}
+      variant={variant === 'background-image' ? 'default' : variant}
       className={`text-center ${className}`}
       aosAnimation="fade-up"
       aosDelay={String(aosDelay)}

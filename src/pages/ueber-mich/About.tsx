@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, SectionHeading } from "../../global_components/ui";
+import { SectionHeading } from "../../global_components/ui";
 import { ProfileCard } from "../../global_components/ProfileCard";
 import { FeatureCard } from "../../global_components/FeatureCard";
 import { CTASection } from "../../global_components/CTASection";

@@ -8,6 +8,8 @@ interface ServiceSectionProps {
   imagePosition: 'left' | 'right';
   aosDelay?: number;
   className?: string;
+  imageShadow?: boolean;
+  highlightWords?: string[];
 }
 
 export const ServiceSection: React.FC<ServiceSectionProps> = ({
@@ -17,12 +19,31 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
   description,
   imagePosition,
   aosDelay = 0,
-  className = ""
+  className = "",
+  imageShadow = true,
+  highlightWords = []
 }) => {
   const isImageLeft = imagePosition === 'left';
   const flexDirection = isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse';
   const imageAos = isImageLeft ? 'fade-right' : 'fade-left';
   const textAos = isImageLeft ? 'fade-left' : 'fade-right';
+
+  const renderHighlightedTitle = () => {
+    if (highlightWords.length === 0) {
+      return title;
+    }
+
+    let highlightedTitle = title;
+    highlightWords.forEach((word) => {
+      const regex = new RegExp(`(${word})`, 'gi');
+      highlightedTitle = highlightedTitle.replace(
+        regex,
+        '<span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">$1</span>'
+      );
+    });
+
+    return <span dangerouslySetInnerHTML={{ __html: highlightedTitle }} />;
+  };
 
   return (
     <section
@@ -33,7 +54,7 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
       <img
         src={image}
         alt={imageAlt}
-        className="w-full md:w-1/2 rounded-xl shadow-md"
+        className={`w-full md:w-1/2 rounded-xl ${imageShadow ? 'shadow-md' : ''}`}
         loading="eager"
         data-aos={imageAos}
         data-aos-delay={aosDelay + 100}
@@ -44,7 +65,7 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
           data-aos={textAos}
           data-aos-delay={aosDelay + 200}
         >
-          {title}
+          {renderHighlightedTitle()}
         </h2>
         <p
           className="text-gray-700"

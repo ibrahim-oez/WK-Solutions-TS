@@ -1,11 +1,13 @@
 
 import React from "react";
-import geminiWebdesign from "../../global_assets/img/Gemini-Webdesign.jpg";
-import geminiApps from "../../global_assets/img/gemini-apps.webp";
-import WebsitePic5 from "../../global_assets/img/website-pic-5.jpg";
-import WebsitePic6 from "../../global_assets/img/website-pic-6.jpg";
+import strategicItConsulting from "../../global_assets/img/strategic_it_consulting.webp";
+import softwareDevices from "../../global_assets/img/software_devices.webp";
+import webPresence from "../../global_assets/img/web_presence.webp";
+import printProducts from "../../global_assets/img/print_products.webp";
+import serviceDataRecovery from "../../global_assets/img/service_data_recovery.webp";
+import automationOptimization from "../../global_assets/img/automation_optimization.webp";
 import { Accordion } from "../../global_components/Accordion";
-import { Button, SectionHeading, GradientIcon } from "../../global_components/ui";
+import { SectionHeading, Card } from "../../global_components/ui";
 import { ServiceSection } from "../../global_components/ServiceSection";
 import { FeatureCard } from "../../global_components/FeatureCard";
 import { CTASection } from "../../global_components/CTASection";
@@ -44,6 +46,16 @@ const faqItems: AccordionItem[] = [
     content:
       "Wir sprechen über Ihre Vorstellungen, Materialien und Formate. Ich übernehme das Design und organisiere bei Bedarf den Druck über Dienstleister.",
   },
+  {
+    title: "Was kann bei der Datenrettung wiederhergestellt werden?",
+    content:
+      "Ich kann Daten von defekten Festplatten, SSDs, USB-Sticks und SD-Karten wiederherstellen. Auch versehentlich gelöschte Dateien oder beschädigte Systeme sind oft rettbar. Eine Analyse zeigt die Erfolgsaussichten.",
+  },
+  {
+    title: "Welche Prozesse können automatisiert werden?",
+    content:
+      "Von der automatischen Datensicherung über E-Mail-Workflows bis hin zu komplexen Geschäftsprozessen – fast alle wiederkehrenden Aufgaben lassen sich automatisieren. Ich analysiere Ihre Abläufe und entwickle passende Lösungen.",
+  },
 ];
 
 export const Services: React.FC = () => {
@@ -54,9 +66,7 @@ export const Services: React.FC = () => {
 
       <HeroSection 
       titel="Ihre Herausforderungen. Unsere Lösungen." 
-      untertitel="Für Unternehmen, Startups und Selbstständige biete ich umfassende IT- &
-            Designlösungen. Privatpersonen unterstütze ich gezielt mit
-            professioneller IT-Hilfe."/>
+      untertitel="Für Unternehmen, Startups und Selbstständige biete ich umfassende IT-, Design-, Datenrettungs- & Automatisierungslösungen. Privatpersonen unterstütze ich gezielt mit professioneller IT-Hilfe."/>
 
       <div className="max-w-4xl mx-auto px-4 py-16 space-y-12">
 
@@ -64,8 +74,9 @@ export const Services: React.FC = () => {
 
       <div className="mt-20 space-y-20">
         {/* Abschnitt 1: Persönliche IT-Beratung */}
+        <Card>
         <ServiceSection
-          image={WebsitePic5}
+          image={strategicItConsulting}
           imageAlt="IT-Beratung"
           title="Persönliche IT-Beratung, die Sie versteht"
           description="Jeder Mensch und jedes Unternehmen ist anders. Ich helfe Ihnen,
@@ -73,11 +84,15 @@ export const Services: React.FC = () => {
             Alltag passen – egal ob Privatperson, Einzelunternehmer:in oder
             Team. Ohne Fachchinesisch, mit Klartext."
           imagePosition="left"
+          imageShadow={false}
+          highlightWords={["IT-Beratung"]}
         />
+        </Card>
 
         {/* Abschnitt 2: Hilfe bei Software, Apps & Geräten */}
+        <Card>
         <ServiceSection
-          image={geminiApps}
+          image={softwareDevices}
           imageAlt="Softwarehilfe"
           title="Hilfe bei Software, Apps & Geräten"
           description="Ich unterstütze Sie dabei, das richtige Setup für Ihre Arbeit zu
@@ -86,11 +101,15 @@ export const Services: React.FC = () => {
             Ihnen passt."
           imagePosition="right"
           aosDelay={100}
+          imageShadow={false}
+          highlightWords={["Software", "Apps", "Geräten"]}
         />
+        </Card>
 
         {/* Abschnitt 3: Webseiten für Ihren Geschäftserfolg */}
+        <Card>
         <ServiceSection
-          image={geminiWebdesign}
+          image={webPresence}
           imageAlt="Webentwicklung"
           title="Webseiten für Ihren Geschäftserfolg"
           description="Speziell für Selbstständige und kleine Teams entwickle ich
@@ -99,11 +118,15 @@ export const Services: React.FC = () => {
             geladen und auf Wunsch gehostet oder zur Selbstpflege vorbereitet"
           imagePosition="left"
           aosDelay={200}
+          imageShadow={false}
+          highlightWords={["Webseiten"]}
         />
+        </Card>
 
         {/* Abschnitt 4: Design & Printprodukte */}
+        <Card>
         <ServiceSection
-          image={WebsitePic6}
+          image={printProducts}
           imageAlt="Design und Druck"
           title="Design & Printprodukte für Ihren Auftritt"
           description="Ich gestalte Ihre Visitenkarten, Flyer oder Poster – auf Wunsch
@@ -112,7 +135,44 @@ export const Services: React.FC = () => {
             Umwege."
           imagePosition="right"
           aosDelay={300}
+          imageShadow={false}
+          highlightWords={["Design", "Printprodukte"]}
         />
+        </Card>
+
+        {/* Abschnitt 5: Datenrettung & Datensicherung */}
+        <Card>
+        <ServiceSection
+          image={serviceDataRecovery}
+          imageAlt="Datenrettung und Datensicherung"
+          title="Datenrettung & Datensicherung"
+          description="Verloren geglaubte Daten wiederherstellen oder wichtige Daten
+            zuverlässig sichern – ich helfe Ihnen bei der Datenrettung von
+            defekten Festplatten, versehentlich gelöschten Dateien und
+            erstelle individuelle Backup-Strategien für Ihr Unternehmen."
+          imagePosition="left"
+          aosDelay={400}
+          imageShadow={false}
+          highlightWords={["Datenrettung", "Datensicherung"]}
+        />
+        </Card>
+
+        {/* Abschnitt 6: Automatisierung & Prozessoptimierung */}
+        <Card>
+        <ServiceSection
+          image={automationOptimization}
+          imageAlt="Automatisierung und Prozessoptimierung"
+          title="Automatisierung & Prozessoptimierung"
+          description="Wiederkehrende Aufgaben automatisieren und Arbeitsabläufe
+            optimieren – von einfachen Skripten bis hin zu komplexen
+            Workflow-Automatisierungen. Sparen Sie Zeit und reduzieren Sie
+            Fehlerquellen durch intelligente Automatisierungslösungen."
+          imagePosition="right"
+          aosDelay={500}
+          imageShadow={false}
+          highlightWords={["Automatisierung", "Prozessoptimierung"]}
+        />
+        </Card>
       </div>
 
       <hr className="my-16 border-blue-200" />
@@ -171,6 +231,32 @@ export const Services: React.FC = () => {
           description="Gestaltung von Visitenkarten, Flyern und mehr, inklusive
             Materialberatung und optionaler Druckabwicklung."
           aosDelay={400}
+        />
+
+        {/* Box 5: Datenrettung & Datensicherung */}
+        <FeatureCard
+          icon={
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          }
+          title="Datenrettung & Datensicherung"
+          description="Rettung verloren geglaubter Daten und Entwicklung individueller
+            Backup-Strategien für maximale Datensicherheit."
+          aosDelay={500}
+        />
+
+        {/* Box 6: Automatisierung & Prozessoptimierung */}
+        <FeatureCard
+          icon={
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          }
+          title="Automatisierung & Prozessoptimierung"
+          description="Wiederkehrende Aufgaben automatisieren und Arbeitsabläufe
+            optimieren für mehr Effizienz und weniger Fehlerquellen."
+          aosDelay={600}
         />
       </div>
 

@@ -34,7 +34,7 @@ export const Impressum: React.FC = () => {
         <br />
         E-Mail:{" "}
         <a href="mailto:oezdogan.ib@wk-solutions.de" className="text-blue-600 underline">
-          oezdogan.ib@wk-solutions.de
+          ibrahim.oez@wk-solutions.de
         </a>
       </p>
 

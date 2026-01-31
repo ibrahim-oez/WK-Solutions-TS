@@ -12,7 +12,6 @@ import { ServiceSection } from "../../global_components/ServiceSection";
 import { FeatureCard } from "../../global_components/FeatureCard";
 import { CTASection } from "../../global_components/CTASection";
 import { TrustBadges } from "../../global_components/TrustBadges";
-import { SocialLinks } from "../../global_components/SocialLinks";
 import { ProfileCard } from "../../global_components/ProfileCard";
 import geminiSupport from "../../global_assets/img/Gemini-Support.jpg";
 import geminiWebdesign from "../../global_assets/img/Gemini-Webdesign.jpg";
@@ -20,9 +19,6 @@ import pexels2 from "../../global_assets/img/pexels-fauxels-3184418.jpg";
 import pexels3 from "../../global_assets/img/pexels-fauxels-3184465.jpg";
 import heroPic from "../../global_assets/img/compressed/hero-pic.webp";
 import picMe from "../../global_assets/img/pic-me.png";
-import XingIcon from "../../global_assets/img/xing.svg";
-import InstagramIcon from "../../global_assets/img/insta.svg";
-import LinkedinIcon from "../../global_assets/img/linkedin.svg";
 
 export const Home: React.FC = () => {
 
@@ -87,8 +83,8 @@ export const Home: React.FC = () => {
                     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                   </svg>
                 ),
-                text: "Google Bewertungen",
-                subText: "★★★★★",
+                text: "Auf Google finden",
+                subText: "",
                 link: "https://share.google/KHl7rdZDLZ7oBVBmK"
               },
               {
@@ -368,7 +364,7 @@ export const Home: React.FC = () => {
         description=""
         buttonText="Jetzt unverbindlich anfragen"
         buttonLink="/kontakt"
-        variant="standard"
+        variant="default"
         className="bg-gradient-to-r from-blue-50 to-purple-50 py-24 text-center"
         buttonVariant="primary"
         buttonSize="md"
