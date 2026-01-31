@@ -8,12 +8,21 @@ import {
   BadgeCheck,
 } from "lucide-react";
 import { Button, SectionHeading } from "../../global_components/ui";
+import { ServiceSection } from "../../global_components/ServiceSection";
+import { FeatureCard } from "../../global_components/FeatureCard";
+import { CTASection } from "../../global_components/CTASection";
+import { TrustBadges } from "../../global_components/TrustBadges";
+import { SocialLinks } from "../../global_components/SocialLinks";
+import { ProfileCard } from "../../global_components/ProfileCard";
 import geminiSupport from "../../global_assets/img/Gemini-Support.jpg";
 import geminiWebdesign from "../../global_assets/img/Gemini-Webdesign.jpg";
 import pexels2 from "../../global_assets/img/pexels-fauxels-3184418.jpg";
 import pexels3 from "../../global_assets/img/pexels-fauxels-3184465.jpg";
 import heroPic from "../../global_assets/img/compressed/hero-pic.webp";
 import picMe from "../../global_assets/img/pic-me.png";
+import XingIcon from "../../global_assets/img/xing.svg";
+import InstagramIcon from "../../global_assets/img/insta.svg";
+import LinkedinIcon from "../../global_assets/img/linkedin.svg";
 
 export const Home: React.FC = () => {
 
@@ -65,47 +74,33 @@ export const Home: React.FC = () => {
           </Button>
 
           {/* Trust Badges */}
-          <div 
-            className="flex flex-wrap justify-center items-center gap-6 mt-12 pt-8 border-t border-white/20"
-            data-aos="fade-up"
-            data-aos-delay="800"
-            data-aos-duration="1000"
-          >
-            {/* Google Reviews Badge */}
-            <a
-              href="https://share.google/KHl7rdZDLZ7oBVBmK"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full hover:bg-white/20 transition-all group"
-            >
-              <svg className="w-6 h-6 " viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-              </svg>
-              <div className="text-left">
-                <div className="flex items-center gap-1">
-                  <span className="text-yellow-400 text-sm">★★★★★</span>
-                </div>
-                <span className="text-xs text-white/90">Google Bewertungen</span>
-              </div>
-            </a>
-
-            {/* TH Köln Badge */}
-           
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-6 rounded-full">
-              <BadgeCheck className="w-6 h-6 text-blue-300" />
-              <span className="text-sm text-white/90">TH Köln Student</span>
-            </div>
-
-            {/*<-- Lokal Badge -->*/}
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-6 rounded-full">
-              <Handshake className="w-5 h-5 text-green-300" />
-              <span className="text-sm text-white/90">Lokal in Bergneustadt</span>
-            </div>
-            
-          </div>
+          <TrustBadges
+            className="mt-12 pt-8 border-t border-white/20"
+            aosDelay={800}
+            badges={[
+              {
+                icon: (
+                  <svg className="w-6 h-6 " viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                  </svg>
+                ),
+                text: "Google Bewertungen",
+                subText: "★★★★★",
+                link: "https://share.google/KHl7rdZDLZ7oBVBmK"
+              },
+              {
+                icon: <BadgeCheck className="w-6 h-6 text-blue-300" />,
+                text: "TH Köln Student"
+              },
+              {
+                icon: <Handshake className="w-5 h-5 text-green-300" />,
+                text: "Lokal in Bergneustadt"
+              }
+            ]}
+          />
         </div>
       </section>
 
@@ -119,62 +114,25 @@ export const Home: React.FC = () => {
           className="mb-12"
         />
         <div className="space-y-16">
-          <div className="md:flex items-center gap-10">
-            <img
-              src={geminiSupport}
-              alt="IT-Beratung"
-              className="md:w-1/2 rounded-lg shadow-md"
-              fetchPriority="high"
-              loading="eager"
-              data-aos="fade-right" // Bild von rechts einfliegen
-            />
-            <div className="md:w-1/2 mt-6 md:mt-0">
-              <h3
-                className="text-2xl font-bold text-gray-900 mb-3"
-                data-aos="fade-left"
-                data-aos-delay="200"
-              >
-                IT-Beratung & Support
-              </h3>
-              <p
-                className="text-gray-700 text-lg"
-                data-aos="fade-left"
-                data-aos-delay="300"
-              >
-                Wir analysieren Ihre IT-Herausforderungen genau und setzen
-                individuelle Lösungen um – damit Ihr Unternehmen digital
-                effizienter und sicherer wird.
-              </p>
-            </div>
-          </div>
+          <ServiceSection
+            image={geminiSupport}
+            imageAlt="IT-Beratung"
+            title="IT-Beratung & Support"
+            description="Wir analysieren Ihre IT-Herausforderungen genau und setzen
+              individuelle Lösungen um – damit Ihr Unternehmen digital
+              effizienter und sicherer wird."
+            imagePosition="left"
+          />
 
-          <div className="md:flex items-center gap-10 flex-row-reverse">
-            <img
-              src={geminiWebdesign}
-              alt="Webentwicklung"
-              className="w-full md:w-1/2 rounded-lg shadow-md"
-              fetchPriority="high"
-              loading="eager"
-              data-aos="fade-left" // Bild von links einfliegen
-            />
-            <div className="md:w-1/2 mt-6 md:mt-0">
-              <h3
-                className="text-2xl font-bold text-gray-900 mb-3"
-                data-aos="fade-right"
-                data-aos-delay="200"
-              >
-                Webentwicklung & Digitalisierung
-              </h3>
-              <p
-                className="text-gray-700 text-lg"
-                data-aos="fade-right"
-                data-aos-delay="300"
-              >
-                Ihre digitale Visitenkarte – professionell, klar und auf den
-                Punkt. Wir setzen Ihre Stärken online in Szene.
-              </p>
-            </div>
-          </div>
+          <ServiceSection
+            image={geminiWebdesign}
+            imageAlt="Webentwicklung"
+            title="Webentwicklung & Digitalisierung"
+            description="Ihre digitale Visitenkarte – professionell, klar und auf den
+              Punkt. Wir setzen Ihre Stärken online in Szene."
+            imagePosition="right"
+            aosDelay={100}
+          />
         </div>
         <div className="mt-10 text-right" data-aos="fade-up" data-aos-delay="400">
           <a
@@ -197,36 +155,33 @@ export const Home: React.FC = () => {
             className="mb-12"
           />
           <div className="grid md:grid-cols-3 gap-10">
-            <div data-aos="fade-up" data-aos-delay="100">
-              <h3 className="font-bold text-lg text-gray-900 mb-2 display-flex items-center gap-2">
-                Ehrliche Beratung
-                <BadgeCheck className="inline-block w-5 h-5 text-blue-600 ml-2 align-middle" />
-              </h3>
-              <p className="text-gray-700">
-                Individuelle IT-Lösungen statt Standardware – wir empfehlen nur,
-                was wirklich zu Ihrem Unternehmen und Ihren Zielen passt.
-              </p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">
-                Direkter Kontakt
-                <Handshake className="inline-block w-5 h-5 text-blue-600 ml-2 align-middle" />
-              </h3>
-              <p className="text-gray-700">
-                Sie sprechen direkt mit dem IT-Experten – ohne langes Suchen,
-                persönlich und auf direktem Weg.
-              </p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="300">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">
-                Faire Preise
-                <HandCoins className="inline-block w-5 h-5 text-blue-600 ml-2 align-middle" />
-              </h3>
-              <p className="text-gray-700">
-                Transparente Preise, die sich an Ihren Anforderungen orientieren
-                – passend für Unternehmen jeder Größe und Privatpersonen.
-              </p>
-            </div>
+            <FeatureCard
+              icon={<BadgeCheck className="w-5 h-5 text-white" />}
+              title="Ehrliche Beratung"
+              description="Individuelle IT-Lösungen statt Standardware – wir empfehlen nur,
+                was wirklich zu Ihrem Unternehmen und Ihren Zielen passt."
+              aosDelay={100}
+              variant="default"
+              className="flex-col items-center text-center"
+            />
+            <FeatureCard
+              icon={<Handshake className="w-5 h-5 text-white" />}
+              title="Direkter Kontakt"
+              description="Sie sprechen direkt mit dem IT-Experten – ohne langes Suchen,
+                persönlich und auf direktem Weg."
+              aosDelay={200}
+              variant="default"
+              className="flex-col items-center text-center"
+            />
+            <FeatureCard
+              icon={<HandCoins className="w-5 h-5 text-white" />}
+              title="Faire Preise"
+              description="Transparente Preise, die sich an Ihren Anforderungen orientieren
+                – passend für Unternehmen jeder Größe und Privatpersonen."
+              aosDelay={300}
+              variant="default"
+              className="flex-col items-center text-center"
+            />
           </div>
         </div>
       </section>
@@ -242,34 +197,33 @@ export const Home: React.FC = () => {
             className="mb-12"
           />
           <div className="grid md:grid-cols-3 gap-12">
-            <div className="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
-              <Zap className="w-10 h-10 text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Schnell</h3>
-              <p className="text-gray-700 text-center">
-                Durch Fernwartung und ein einfaches Buchungssystem sind wir oft
-                schon in wenigen Minuten für Sie da.
-              </p>
-            </div>
-            <div className="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
-              <ShieldCheck className="w-10 h-10 text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Zuverlässig
-              </h3>
-              <p className="text-gray-700 text-center">
-                Individuelle IT-Lösungen, die funktionieren – sicher, stabil und
-                langfristig durchdacht.
-              </p>
-            </div>
-            <div className="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="300">
-              <Timer className="w-10 h-10 text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Effizient
-              </h3>
-              <p className="text-gray-700 text-center">
-                Klare Kommunikation, transparente Abrechnung – keine versteckten
-                Kosten, keine Überraschungen.
-              </p>
-            </div>
+            <FeatureCard
+              icon={<Zap className="w-5 h-5 text-white" />}
+              title="Schnell"
+              description="Durch Fernwartung und ein einfaches Buchungssystem sind wir oft
+                schon in wenigen Minuten für Sie da."
+              aosDelay={100}
+              variant="default"
+              className="flex-col items-center text-center"
+            />
+            <FeatureCard
+              icon={<ShieldCheck className="w-5 h-5 text-white" />}
+              title="Zuverlässig"
+              description="Individuelle IT-Lösungen, die funktionieren – sicher, stabil und
+                langfristig durchdacht."
+              aosDelay={200}
+              variant="default"
+              className="flex-col items-center text-center"
+            />
+            <FeatureCard
+              icon={<Timer className="w-5 h-5 text-white" />}
+              title="Effizient"
+              description="Klare Kommunikation, transparente Abrechnung – keine versteckten
+                Kosten, keine Überraschungen."
+              aosDelay={300}
+              variant="default"
+              className="flex-col items-center text-center"
+            />
           </div>
         </div>
       </section>
@@ -278,41 +232,39 @@ export const Home: React.FC = () => {
 
       {/* Über uns */}
       <section className="bg-white py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <img
-            src={picMe}
-            alt="Portrait"
-            className="mx-auto rounded-full w-32 h-32 object-cover mb-6 shadow-lg"
-            fetchPriority="high"
-            loading="eager"
-            data-aos="fade-in" // Bild sanft einblenden
-            data-aos-duration="1000"
-          />
-          <h2
-            className="text-3xl font-semibold text-gray-900 mb-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
+        <div className="max-w-4xl mx-auto px-6">
+          <ProfileCard
+            image={picMe}
+            imageAlt="Portrait"
+            showGradientBorder={false}
+            className="text-center p-0"
           >
-            Wer steht hinter WK Solutions?
-          </h2>
-          <p
-            className="text-lg text-gray-700 mb-8"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            Von der ersten Idee bis zum laufenden System – ich unterstütze
-            kleine Unternehmen, Startups und Privatpersonen mit unkomplizierter,
-            ehrlicher IT-Hilfe.
-          </p>
-          <Button
-            to="/ueber-mich"
-            variant="primary"
-            size="md"
-            aosAnimation="fade-up"
-            aosDelay="400"
-          >
-            Mehr über mich erfahren
-          </Button>
+            <h2
+              className="text-3xl font-semibold text-gray-900 mb-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              Wer steht hinter WK Solutions?
+            </h2>
+            <p
+              className="text-lg text-gray-700 mb-8"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              Von der ersten Idee bis zum laufenden System – ich unterstütze
+              kleine Unternehmen, Startups und Privatpersonen mit unkomplizierter,
+              ehrlicher IT-Hilfe.
+            </p>
+            <Button
+              to="/ueber-mich"
+              variant="primary"
+              size="md"
+              aosAnimation="fade-up"
+              aosDelay="400"
+            >
+              Mehr über mich erfahren
+            </Button>
+          </ProfileCard>
         </div>
       </section>
 
@@ -411,25 +363,17 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Schnellkontakt */}
-      <section id="toBottom" className="bg-gradient-to-r from-blue-50 to-purple-50 py-24  text-center">
-        <p
-          className="text-xl font-semibold mb-3"
-          data-aos="fade-up"
-          data-aos-duration="600"
-        >
-          Sie haben ein akutes IT-Problem oder möchten sich beraten lassen?
-        </p>
-        <Button
-          to="/kontakt"
-          variant="primary"
-          size="md"
-          aosAnimation="zoom-in"
-          aosDelay="200"
-          className="hover:shadow-lg"
-        >
-          Jetzt unverbindlich anfragen
-        </Button>
-      </section>
+      <CTASection
+        title="Sie haben ein akutes IT-Problem oder möchten sich beraten lassen?"
+        description=""
+        buttonText="Jetzt unverbindlich anfragen"
+        buttonLink="/kontakt"
+        variant="standard"
+        className="bg-gradient-to-r from-blue-50 to-purple-50 py-24 text-center"
+        buttonVariant="primary"
+        buttonSize="md"
+        aosDelay={200}
+      />
     </div>
   );
 }

@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import { KontaktFormular } from "./components/KontaktFormular";
+import { CheckboxGroup } from "../../global_components/CheckboxGroup";
+import { HeroSection } from "../../global_components/HeroSection";
 import GoogleMeetIcon from "../../global_assets/img/google-meet.svg";
 
 export const Contact: React.FC = () => {
-  const [akzeptiert1, setAkzeptiert1] = useState<boolean>(false);
-  const [akzeptiert2, setAkzeptiert2] = useState<boolean>(false);
-
-  const beidesAkzeptiert = akzeptiert1 && akzeptiert2;
+  const [allCheckboxesAccepted, setAllCheckboxesAccepted] = useState<boolean>(false);
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Hero Section */}
+      <HeroSection
+        titel="Kontakt"
+        untertitel="Lassen Sie uns gemeinsam Ihre IT-Herausforderungen lösen"
+      />
+      
+      <div className="max-w-3xl mx-auto px-4 py-16">
+      
       {/* Kontaktformular */}
       <KontaktFormular />
 
@@ -41,62 +48,53 @@ export const Contact: React.FC = () => {
           </p>
         </div>
 
-        {/* Checkboxen erhalten weiterhin ihre Animationen */}
-        <div
-          className="flex items-start mb-2"
-        >
-          <label className="flex items-start text-sm text-gray-700 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={akzeptiert1}
-              onChange={(e) => setAkzeptiert1(e.target.checked)}
-              className="mt-1 mr-2"
-            />
-            <span>
-              *Ich akzeptiere die{" "}
-              <a href="/datenschutz" className="text-blue-600 underline">
-                Datenschutzerklärung
-              </a>
-              .
-            </span>
-          </label>
-        </div>
-
-        <div
-          className="flex items-start mb-4"
-        >
-          <label className="flex items-start text-sm text-gray-700 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={akzeptiert2}
-              onChange={(e) => setAkzeptiert2(e.target.checked)}
-              className="mt-1 mr-2"
-            />
-            <span>
-              *Ich habe die{" "}
-              <a
-                href="/widerrufsrecht"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline"
-              >
-                Widerrufsbelehrung
-              </a>{" "}
-              gelesen und zur Kenntnis genommen. Ich bin einverstanden und
-              verlange ausdrücklich, dass Sie mit der Ausführung der gebuchten
-              Dienstleistung vor Ablauf der Widerrufsfrist beginnen. Mir ist
-              bekannt, dass mein Widerrufsrecht erlischt, sobald die
-              Dienstleistung vollständig erbracht wurde.
-            </span>
-          </label>
-        </div>
+        <CheckboxGroup
+          checkboxes={[
+            {
+              id: "datenschutz",
+              label: (
+                <>
+                  Ich akzeptiere die{" "}
+                  <a href="/datenschutz" className="text-blue-600 underline">
+                    Datenschutzerklärung
+                  </a>
+                  .
+                </>
+              ),
+              required: true
+            },
+            {
+              id: "widerruf",
+              label: (
+                <>
+                  Ich habe die{" "}
+                  <a
+                    href="/widerrufsrecht"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline"
+                  >
+                    Widerrufsbelehrung
+                  </a>{" "}
+                  gelesen und zur Kenntnis genommen. Ich bin einverstanden und
+                  verlange ausdrücklich, dass Sie mit der Ausführung der gebuchten
+                  Dienstleistung vor Ablauf der Widerrufsfrist beginnen. Mir ist
+                  bekannt, dass mein Widerrufsrecht erlischt, sobald die
+                  Dienstleistung vollständig erbracht wurde.
+                </>
+              ),
+              required: true
+            }
+          ]}
+          onAllChecked={setAllCheckboxesAccepted}
+        />
 
         <a
-          href={beidesAkzeptiert ? "https://calendar.app.google/HeZENKhjYyeWGJ6P9" : undefined}
+          href={allCheckboxesAccepted ? "https://calendar.app.google/HeZENKhjYyeWGJ6P9" : undefined}
           target="_blank"
           rel="noopener noreferrer"
           className={`inline-flex items-center px-6 py-3 rounded-lg transition font-medium ${
-            beidesAkzeptiert
+            allCheckboxesAccepted
               ? "bg-blue-700 text-white hover:bg-yellow-500 hover:text-black"
               : "bg-gray-300 text-gray-500 cursor-not-allowed pointer-events-none"
           }`}
@@ -106,5 +104,6 @@ export const Contact: React.FC = () => {
         </a>
       </div>
     </div>
+  </div>
   );
 };

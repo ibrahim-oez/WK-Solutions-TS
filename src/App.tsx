@@ -10,17 +10,17 @@ import { CookieBanner } from "./global_components/CookieBanner.tsx";
 // Häufig besuchte Seiten - normal laden
 import { Home } from "./pages/home/Home.tsx";
 import { Services } from "./pages/services/Services.tsx";
-import { About } from "./pages/about/About.tsx";
+import { About } from "./pages/ueber-mich/About.tsx";
 import { Contact } from "./pages/contact/Contact.tsx";
 import { KontaktDaten } from "./pages/contact/components/KontaktDaten.tsx";
 import { Reviews } from "./pages/reviews/Reviews.tsx";
 
 // Selten besuchte Seiten - lazy laden für bessere Performance
 const Datenschutz = lazy(() => import("./pages/data-privacy/Datenschutz.tsx").then(m => ({ default: m.Datenschutz })));
-const Impressum = lazy(() => import("./pages/imprint/Impressum.tsx").then(m => ({ default: m.Impressum })));
+const Impressum = lazy(() => import("./pages/impressum/Impressum.tsx").then(m => ({ default: m.Impressum })));
 const AGB = lazy(() => import("./pages/agb/AGB.tsx").then(m => ({ default: m.AGB })));
 const Widerruf = lazy(() => import("./pages/withdrawal/Widerrufsrecht.tsx").then(m => ({ default: m.Widerruf })));
-const NotFound = lazy(() => import("./pages/not-found/NotFound.tsx").then(m => ({ default: m.NotFound })));
+const NotFound = lazy(() => import("./pages/404/NotFound.tsx").then(m => ({ default: m.NotFound })));
 
 export default function App() {
   // AOS einmalig initialisieren, wenn die App geladen wird

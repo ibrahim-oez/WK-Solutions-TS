@@ -58,15 +58,12 @@ export function Header() {
           >
             Über mich
           </NavLink>
-          <NavLink
-            to="/bewertungen"
-            onClick={() => setMenuOpen(false)}
-            className={({ isActive }) =>
-              `${linkClass} ${isActive ? activeClass : ""}`
-            }
+          <span
+            className={`${linkClass} cursor-not-allowed opacity-50 text-gray-400`}
+            title="Bewertungen sind momentan nicht verfügbar"
           >
             Bewertungen
-          </NavLink>
+          </span>
           <NavLink
             to="/kontakt"
             onClick={() => setMenuOpen(false)}

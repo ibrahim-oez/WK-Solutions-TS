@@ -3,10 +3,6 @@ import React from "react";
 export const KontaktFormular: React.FC = () => {
   return (
     <div className="max-w-xl mx-auto px-4 py-16">
-      <h1 className="text-3xl font-bold text-black mb-6 text-center">
-        Kontakt
-      </h1>
-
       <form
         action="https://form.taxi/s/q1grrsrc"
         method="POST"
